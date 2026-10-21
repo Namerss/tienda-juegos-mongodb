@@ -1,0 +1,13 @@
+# Datos y logs de MongoDB
+data/
+logs/
+
+# Secretos: NUNCA al repositorio
+secrets/
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
