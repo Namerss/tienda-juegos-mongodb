@@ -116,7 +116,7 @@ Se usa `kill -9` (y no un apagado ordenado) a propósito: emula un corte de luz 
 
 ### Bitácora
 
-> 📸 Reemplazar cada captura por la propia, guardada en `docs/img/`.
+
 
 **① Estado inicial.** `nodo1` es primario y todas las inserciones van a `localhost:27017`.
 
@@ -234,7 +234,7 @@ Bruno (saldo $5.000) intenta comprar el mismo juego. Los pasos 1 y 2 **ya se eje
   ✔ Rollback verificado: la base quedó intacta.
 ```
 
-> 📸 Reemplazar por la salida real: `docs/img/05-transaccion.png`
+![Ejecución de la transacción: commit y rollback](docs/img/05-transaccion.png)
 
 ### Las cuatro propiedades ACID, demostradas
 
@@ -245,7 +245,6 @@ Bruno (saldo $5.000) intenta comprar el mismo juego. Los pasos 1 y 2 **ya se eje
 | **Aislamiento** | Durante la transacción, una lectura externa sigue viendo `stock = 10` |
 | **Durabilidad** | El commit con `w: "majority"` queda en ambos nodos con datos y sobrevive a un failover |
 
-> Las transacciones multi-documento **requieren un Replica Set**: sobre un `mongod` aislado fallan. Por eso este paso se apoya en el Paso 1.
 
 ---
 
@@ -309,7 +308,7 @@ App borra la base completa   DENEGADO   DENEGADO   ✅  [13] not authorized on t
 Admin lista las bases        PERMITIDO  PERMITIDO  ✅  ['admin', 'config', 'local', 'tienda...
 ```
 
-> 📸 Reemplazar por la salida real: `docs/img/06-auditoria-seguridad.png`. Conviene sumar una captura de `mongosh` sin credenciales ejecutando `db.juegos.find()` y recibiendo `requires authentication`.
+![Auditoría de seguridad](docs/img/06-auditoria-seguridad.png)
 
 ### ¿Por qué esta base es inmune a esos ataques?
 
